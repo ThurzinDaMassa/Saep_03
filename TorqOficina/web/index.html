@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Torq Oficina</title><link rel="icon" href="/logo.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+ <section id="login" hidden>
+  <div class="login-story"><a class="brand" href="/"><img src="/logo.svg" alt="Logomarca Torq"><span>torq<span class="brand-sub">OFICINA</span></span></a><div><span class="eyebrow">OFICINA ROTA 4</span><h1>Cada reparo.<br>Cada detalhe.<br><em>Sob controle.</em></h1><p>Do primeiro atendimento à entrega das chaves, acompanhe o que move a sua oficina.</p></div><small>Gestão de oficina mecânica · Grupo 04</small></div>
+  <div class="login-form"><span class="eyebrow">BEM-VINDO À TORQ</span><h2>Sua oficina começa aqui</h2><p class="muted">Entre com seu usuário para acessar os atendimentos.</p><form id="login-form"><label for="login-email">E-mail</label><input id="login-email" name="email" type="email" autocomplete="username" required placeholder="seu@email.com"><label for="login-password">Senha</label><input id="login-password" name="senha" type="password" autocomplete="current-password" required placeholder="Sua senha"><p id="login-error" class="error" role="alert"></p><button class="primary wide" type="submit">Entrar na oficina <span aria-hidden="true">↗</span></button></form><div class="demo-note"><strong>Acesso de demonstração</strong><span>admin@torq.local</span><span>Senha: Oficina@123</span></div><small>Dados fictícios para apresentação do projeto.</small></div>
+ </section>
+ <div id="app" hidden>
+  <a href="#content" class="skip-link">Ir para o conteúdo</a>
+  <header class="app-header">
+   <div class="header-inner">
+    <a class="brand" href="#dashboard" aria-label="Torq Oficina, visão geral"><img src="/logo.svg" alt=""><span>torq<span class="brand-sub">OFICINA</span></span></a>
+    <div class="workspace"><span class="workspace-dot"></span><div><strong>Oficina Rota 4</strong><small>Central de operações</small></div></div>
+    <button id="global-search" class="command-trigger" aria-label="Buscar na oficina"> <span class="search-icon"></span><span>Buscar na oficina</span><kbd>Ctrl K</kbd></button>
+    <div class="top-actions"><span id="today"></span><button id="alert-shortcut" class="icon-button" aria-label="Ver alertas de estoque"></button><div class="user-avatar" id="avatar">AD</div><div class="user-label"><strong id="user-name"></strong><small id="user-role"></small></div><button id="logout" class="text-button">Sair</button></div>
+   </div>
+   <div class="nav-shell"><nav id="navigation" aria-label="Navegação principal"></nav></div>
+   <div id="request-progress" class="request-progress" hidden></div>
+  </header>
+  <div class="main-wrap">
+   <div class="context-bar"><span class="breadcrumb">Oficina Rota 4 <span>/</span> <strong id="breadcrumb">Visão geral</strong></span><div class="sync-status"><span class="online-dot"></span><span id="sync-label">Dados atualizados</span><button id="refresh-data" class="icon-button" aria-label="Atualizar dados"></button></div></div>
+   <main id="content" tabindex="-1"></main>
+   <footer><span><strong>torq</strong> · Gestão de oficina</span><span>Grupo 04 · Testes de Sistemas</span></footer>
+  </div>
+ </div>
+ <dialog id="modal" aria-labelledby="modal-title"><div class="modal-head"><div><span class="eyebrow">TORQ OFICINA</span><h2 id="modal-title"></h2></div><button id="close-modal" class="icon-button" aria-label="Fechar formulário">✕</button></div><div id="modal-body"></div></dialog>
+ <dialog id="confirm-modal" aria-labelledby="confirm-title" aria-describedby="confirm-description"><div class="confirm-icon"></div><h2 id="confirm-title"></h2><p id="confirm-description"></p><div class="form-actions"><button id="confirm-no" class="secondary" type="button">Voltar</button><button id="confirm-yes" class="primary" type="button">Confirmar</button></div></dialog>
+ <dialog id="search-modal" aria-label="Busca global"><div class="command-input"><span class="search-icon"></span><input id="global-query" type="search" placeholder="Página, cliente, placa ou ordem…" aria-label="Busca global" autocomplete="off"><button id="close-search" class="icon-button" aria-label="Fechar busca">✕</button></div><div id="search-results" class="search-results" aria-live="polite"></div><div class="command-footer"><span>↑ ↓ para escolher · Enter para abrir</span><span>Esc para fechar</span></div></dialog>
+ <div id="toast-region" aria-live="polite" aria-atomic="false"></div>
+ <div id="loading" class="initial-loading"><img src="/logo.svg" alt=""><span>Preparando sua oficina…</span><div class="loading-line"></div></div>
+</body>
+</html>

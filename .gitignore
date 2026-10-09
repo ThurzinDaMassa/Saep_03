@@ -1,0 +1,23 @@
+# Configurações locais da IDE e arquivos compilados
+.idea/
+**/.idea/
+**/*.iml
+out/
+**/out/
+**/build/
+**/target/
+**/*.class
+
+# Banco local, arquivos temporários e credenciais particulares
+tmp/
+**/__pycache__/
+**/*.pyc
+**/*.log
+**/config.local.properties
+**/config.teste.properties
+.env
+.env.*
+
+# Versões anteriores da entrega
+Entrega_Grupo04_Oficina_Mecanica.zip
+TorqOficina/entrega/Apresentacao_Grupo04_Torq.pptx

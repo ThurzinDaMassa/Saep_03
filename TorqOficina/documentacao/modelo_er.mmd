@@ -1,0 +1,101 @@
+erDiagram
+    usuarios ||--o{ ordens : responde
+    usuarios ||--o{ movimentacoes : registra
+    usuarios ||--o{ historico_ordens : registra
+    usuarios ||--o{ auditoria : realiza
+    clientes ||--o{ veiculos : possui
+    veiculos ||--o{ ordens : recebe
+    ordens ||--o{ ordem_servicos : inclui
+    servicos ||--o{ ordem_servicos : referencia
+    ordens ||--o{ ordem_pecas : consome
+    pecas ||--o{ ordem_pecas : referencia
+    ordens |o--o{ movimentacoes : origina
+    pecas ||--o{ movimentacoes : movimenta
+    ordens ||--o{ historico_ordens : possui
+    usuarios {
+        BIGINT id PK
+        VARCHAR nome
+        VARCHAR email UK
+        VARCHAR senha_hash
+        ENUM perfil
+        BOOLEAN ativo
+        TIMESTAMP criado_em
+    }
+    clientes {
+        BIGINT id PK
+        VARCHAR nome
+        VARCHAR documento UK
+        VARCHAR telefone
+        VARCHAR email
+        TIMESTAMP criado_em
+    }
+    veiculos {
+        BIGINT id PK
+        BIGINT cliente_id FK
+        VARCHAR placa UK
+        VARCHAR marca
+        VARCHAR modelo
+        INT ano
+        INT km
+    }
+    ordens {
+        BIGINT id PK
+        BIGINT veiculo_id FK
+        BIGINT responsavel_id FK
+        VARCHAR relato
+        ENUM status
+        TIMESTAMP aberta_em
+        TIMESTAMP atualizada_em
+    }
+    servicos {
+        BIGINT id PK
+        VARCHAR nome
+        VARCHAR descricao
+        DECIMAL preco
+    }
+    pecas {
+        BIGINT id PK
+        VARCHAR codigo UK
+        VARCHAR nome
+        DECIMAL preco
+        INT estoque
+        INT estoque_minimo
+    }
+    ordem_servicos {
+        BIGINT id PK
+        BIGINT ordem_id FK
+        BIGINT servico_id FK
+        INT quantidade
+        DECIMAL preco_unitario
+    }
+    ordem_pecas {
+        BIGINT id PK
+        BIGINT ordem_id FK
+        BIGINT peca_id FK
+        INT quantidade
+        DECIMAL preco_unitario
+    }
+    movimentacoes {
+        BIGINT id PK
+        BIGINT peca_id FK
+        BIGINT ordem_id FK
+        BIGINT usuario_id FK
+        ENUM tipo
+        INT quantidade
+        INT saldo_apos
+        VARCHAR motivo
+        TIMESTAMP criado_em
+    }
+    historico_ordens {
+        BIGINT id PK
+        BIGINT ordem_id FK
+        BIGINT usuario_id FK
+        VARCHAR evento
+        TIMESTAMP criado_em
+    }
+    auditoria {
+        BIGINT id PK
+        BIGINT usuario_id FK
+        VARCHAR acao
+        TIMESTAMP criado_em
+    }

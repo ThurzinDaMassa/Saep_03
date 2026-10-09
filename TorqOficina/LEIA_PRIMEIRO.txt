@@ -1,0 +1,32 @@
+TORQ OFICINA - GRUPO 04
+
+1. Leia README.md para configurar e executar o sistema Java + MySQL.
+2. Configure os dados de conexão em config.properties.
+3. Inicie seu servidor MySQL e execute preparar_banco.bat.
+4. Execute iniciar.bat e abra http://localhost:8080.
+
+No IntelliJ: abra pom.xml e use as configurações da pasta .run.
+Primeiro execute "Torq Oficina - Preparar banco"; depois "Torq Oficina - Iniciar".
+O Java usa config.local.properties quando presente; o ZIP usa config.properties.
+Confira no console a porta do endereço HTTP. Instruções completas em README.md.
+
+Acesso de demonstração:
+E-mail: admin@torq.local
+Senha: Oficina@123
+
+Entrega documental:
+entrega/Documentacao_Grupo04_Torq.pdf
+entrega/Apresentacao_Grupo04_Torq_Atualizada.pptx
+entrega/Apresentacao_Grupo04_Torq.pdf
+
+Scripts SQL: banco/
+Plano, requisitos, modelo e roteiro: documentacao/
+Código Java: src/
+Testes e resultados: testes/
+
+O JDK e o servidor MySQL devem estar instalados na máquina da apresentação.
+Os testes incluídos passaram no MariaDB do XAMPP. Valide a conexão no MySQL de destino.
+O material foi preparado com assistência de IA. Considere a regra da avaliação antes da entrega.
+
+Versão atualizada: navegação superior, busca global Ctrl+K, filtros, paginação, CSV, prévias de valores/estoque e auditoria.
+Validação: 44 cenários da API e 26 cenários da interface aprovados.

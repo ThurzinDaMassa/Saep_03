@@ -1,0 +1,6 @@
+build/
+target/
+.idea/
+out/
+*.log
+config.local.properties

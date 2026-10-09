@@ -1,0 +1,13 @@
+Verificação direta por JDBC em 09/10/2026.
+JDK 23, MySQL Connector/J 8.4.0 e MariaDB 10.4.32 (XAMPP).
+Banco isolado: torq_test_v2. Verificação JDBC repetida após os testes da versão atualizada.
+
+APROVADO: estoque conciliado com a soma de entradas, saídas e devoluções.
+APROVADO: ausência de estoque negativo.
+APROVADO: senhas armazenadas no formato PBKDF2 com 210.000 iterações.
+APROVADO: ausência de dois atendimentos ativos para o mesmo veículo.
+APROVADO: 11 tabelas relacionais presentes.
+APROVADO: importação dos scripts 02_estrutura.sql e 03_dados_demonstracao.sql em banco novo, com 3 usuários, 3 clientes e 3 ordens de demonstração.
+
+Script de verificação: VerificarBanco.java.
+Destino do projeto: MySQL 8. Validação em MySQL 8 dedicado não realizada neste ambiente.

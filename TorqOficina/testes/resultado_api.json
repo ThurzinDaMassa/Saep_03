@@ -1,0 +1,309 @@
+{
+  "data_execucao": "2026-10-09T09:48:39.789981-03:00",
+  "url": "http://127.0.0.1:8081",
+  "total": 44,
+  "aprovados": 44,
+  "casos": [
+    {
+      "id": "CT01",
+      "cenario": "API protegida rejeita acesso sem sessão",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 41
+    },
+    {
+      "id": "CT02",
+      "cenario": "Senha inválida não autentica",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 124
+    },
+    {
+      "id": "CT03",
+      "cenario": "Login válido cria sessão com cookie HttpOnly e SameSite",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 65
+    },
+    {
+      "id": "CT04",
+      "cenario": "Alteração sem token CSRF é bloqueada",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 6
+    },
+    {
+      "id": "CT05",
+      "cenario": "Sessões de atendente e mecânico refletem seus perfis",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 153
+    },
+    {
+      "id": "CT06",
+      "cenario": "Atendente não gerencia usuários e mecânico não cadastra clientes",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 9
+    },
+    {
+      "id": "CT07",
+      "cenario": "Cadastro de cliente persiste e pode ser consultado",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 14
+    },
+    {
+      "id": "CT08",
+      "cenario": "Documento duplicado é rejeitado sem duplicar cliente",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 48
+    },
+    {
+      "id": "CT09",
+      "cenario": "Campos obrigatórios e e-mail inválido são rejeitados",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 37
+    },
+    {
+      "id": "CT10",
+      "cenario": "Alteração de cadastro preserva o identificador",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 11
+    },
+    {
+      "id": "CT11",
+      "cenario": "Veículo exige placa válida e cliente existente",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 32
+    },
+    {
+      "id": "CT12",
+      "cenario": "Cadastro e atualização de veículo vinculam cliente e quilometragem",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 41
+    },
+    {
+      "id": "CT13",
+      "cenario": "Placa duplicada é rejeitada",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 7
+    },
+    {
+      "id": "CT14",
+      "cenario": "Catálogo de serviços rejeita preço negativo e guarda preço válido",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 11
+    },
+    {
+      "id": "CT15",
+      "cenario": "Cadastro de peça cria saldo inicial rastreável",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 13
+    },
+    {
+      "id": "CT16",
+      "cenario": "Reposição e saída manual registram usuário, motivo e saldo",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 21
+    },
+    {
+      "id": "CT17",
+      "cenario": "Saída manual excessiva não altera o estoque",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 28
+    },
+    {
+      "id": "CT18",
+      "cenario": "Abertura de ordem vincula veículo e responsável",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 23
+    },
+    {
+      "id": "CT19",
+      "cenario": "Duas ordens ativas para o mesmo veículo são bloqueadas",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 5
+    },
+    {
+      "id": "CT20",
+      "cenario": "Ordem não permite pular diretamente para entregue",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 5
+    },
+    {
+      "id": "CT21",
+      "cenario": "Ordem sem serviço não pode ser concluída",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 13
+    },
+    {
+      "id": "CT22",
+      "cenario": "Inclusão de serviço e peça calcula total e baixa estoque",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 44
+    },
+    {
+      "id": "CT23",
+      "cenario": "Estoque no mínimo gera alerta no painel",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 5
+    },
+    {
+      "id": "CT24",
+      "cenario": "Consumo excessivo é rejeitado e não cria item ou movimentação",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 60
+    },
+    {
+      "id": "CT25",
+      "cenario": "Remoção de peça devolve saldo e registra histórico",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 44
+    },
+    {
+      "id": "CT26",
+      "cenario": "Mudança no catálogo preserva o preço registrado na ordem",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 11
+    },
+    {
+      "id": "CT27",
+      "cenario": "Mecânico conclui ordem e atendente confirma entrega",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 45
+    },
+    {
+      "id": "CT28",
+      "cenario": "Ordem entregue bloqueia novos itens e reabertura",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 7
+    },
+    {
+      "id": "CT29",
+      "cenario": "Cancelamento devolve todas as peças uma única vez",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 79
+    },
+    {
+      "id": "CT30",
+      "cenario": "Consumos simultâneos disputam saldo e impedem estoque negativo",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 43
+    },
+    {
+      "id": "CT31",
+      "cenario": "Cadastro e desativação de usuário controlam autenticação",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 145
+    },
+    {
+      "id": "CT32",
+      "cenario": "Administrador não pode desativar sua própria conta",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 5
+    },
+    {
+      "id": "CT33",
+      "cenario": "Identificador inexistente e valores fracionários inválidos são rejeitados",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 7
+    },
+    {
+      "id": "CT34",
+      "cenario": "Texto de injeção SQL é tratado como dado",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 9
+    },
+    {
+      "id": "CT35",
+      "cenario": "Histórico e auditoria identificam as operações executadas",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 35
+    },
+    {
+      "id": "CT36",
+      "cenario": "Logout invalida a sessão",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado.",
+      "duracao_ms": 21
+    },
+    {
+      "id": "CT37",
+      "cenario": "Administrador edita responsável e relato sem alterar veículo, itens ou saldo",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT38",
+      "cenario": "Mecânico não pode editar os dados de recepção da ordem",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT39",
+      "cenario": "Atendente pode editar e a alteração registra autor no histórico e auditoria",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT40",
+      "cenario": "Responsável inexistente rejeita a alteração e preserva o atendimento",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT41",
+      "cenario": "Relato vazio rejeita alteração sem criar histórico",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT42",
+      "cenario": "Edição de dados exige token CSRF válido",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT43",
+      "cenario": "Ordem concluída rejeita edição de responsável e relato",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    },
+    {
+      "id": "CT44",
+      "cenario": "Auditoria administrativa permanece inacessível ao atendente e mecânico",
+      "resultado": "APROVADO",
+      "evidencia": "Resultado esperado confirmado."
+    }
+  ],
+  "data_revisao": "2026-10-09T09:53:25.775445-03:00"
+}

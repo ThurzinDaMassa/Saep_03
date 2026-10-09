@@ -1,0 +1,27 @@
+Validação do conteúdo preparado para o repositório — 09/10/2026
+
+Cópia limpa dos arquivos staged, compilada por compilar.bat.
+Banco novo criado por --init e aplicação iniciada pela pasta pai.
+Ambiente: JDK 23, alvo Java 17, MariaDB 10.4.32 (XAMPP), JDBC incluído no repositório.
+MySQL 8 dedicado ainda não foi validado.
+
+APROVADO: recurso local /
+APROVADO: recurso local /app.js
+APROVADO: recurso local /style.css
+APROVADO: recurso local /logo.svg
+APROVADO: autenticação no banco novo
+APROVADO: usuarios com 3 registros de demonstração
+APROVADO: clientes com 3 registros de demonstração
+APROVADO: veiculos com 3 registros de demonstração
+APROVADO: servicos com 3 registros de demonstração
+APROVADO: pecas com 4 registros de demonstração
+APROVADO: ordens com 3 registros de demonstração
+APROVADO: encerramento da sessão
+APROVADO: arquivos necessários incluídos, sem configuração privada ou dados locais do banco
+
+Verificação JDBC no banco novo:
+APROVADO: saldos conciliados com as movimentações.
+APROVADO: ausência de estoque negativo.
+APROVADO: senhas com PBKDF2.
+APROVADO: ausência de ordens ativas duplicadas por veículo.
+APROVADO: 11 tabelas relacionais presentes.

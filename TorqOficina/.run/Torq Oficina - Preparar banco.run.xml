@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Torq Oficina - Preparar banco" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="oficina.App" />
+    <module name="torq-oficina" />
+    <option name="PROGRAM_PARAMETERS" value="--init" />
+    <option name="VM_PARAMETERS" value="-Djdk.net.unixdomain.tmpdir=&quot;$PROJECT_DIR$&quot;" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <method v="2"><option name="Make" enabled="true" /></method>
+  </configuration>
+</component>

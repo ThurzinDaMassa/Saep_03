@@ -1,0 +1,5 @@
+MySQL Connector/J 8.4.0 - driver JDBC oficial da Oracle/MySQL.
+Arquivo incluído a partir do cache Maven disponível nesta máquina.
+Coordenadas Maven: com.mysql:mysql-connector-j:8.4.0
+Consulte LICENSE e INFO_BIN incluídos no próprio JAR para licença e autoria.
+O servidor MySQL e o JDK não são incluídos no pacote.

@@ -1,0 +1,19 @@
+Verificação da correção de inicialização — 09/10/2026
+JDK 23, Connector/J 8.4.0, MariaDB 10.4.32 local na porta 3307.
+
+APROVADO: execução pela pasta Saep_3 encontra TorqOficina e configuração local
+APROVADO: execução pela pasta TorqOficina usa configuração local
+APROVADO: torq.config explícito tem prioridade sobre configuração local
+APROVADO: torq.config absoluto é preservado
+APROVADO: torq.root explícito é preservado
+APROVADO: entrega sem arquivo local usa config.properties
+APROVADO: configuração local tem prioridade quando presente
+APROVADO: pasta inválida informa como corrigir o diretório
+APROVADO: site atualizado servido na porta 8082
+APROVADO: login de administrador pelo JDBC na porta 3307
+APROVADO: dados existentes carregados sem duplicar a população
+
+Preparação --init executada com saída 0 e preservação dos dados.
+A execução pelo botão Run do IntelliJ depende do acesso à janela pela ferramenta.
+APROVADO: compilação Maven com JDK 23 e alvo Java 17 (BUILD SUCCESS).
+APROVADO: execução com target/classes e driver do Maven, login e consulta de ordens pelo navegador, sem erros JavaScript ou HTTP 500.
