@@ -1,0 +1,39 @@
+{
+  "data_execucao": "2026-10-14T19:59:46.733859-03:00",
+  "total": 8,
+  "aprovados": 8,
+  "casos": [
+    {
+      "cenario": "Raiz do repositório localiza TorqOficina",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Execução na pasta TorqOficina usa configuração padrão",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Configuração local tem prioridade pela raiz",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Configuração local tem prioridade pela pasta do projeto",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Configuração explícita relativa tem prioridade sobre a local",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Configuração explícita absoluta é preservada",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Diretório torq.root explícito é preservado",
+      "resultado": "APROVADO"
+    },
+    {
+      "cenario": "Diretório inválido informa como corrigir",
+      "resultado": "APROVADO"
+    }
+  ]
+}

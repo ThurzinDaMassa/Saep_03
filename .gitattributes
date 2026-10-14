@@ -16,3 +16,6 @@
 *.pptx binary
 *.png binary
 *.zip binary
+
+*.ps1 text eol=crlf
+*.txt text eol=crlf

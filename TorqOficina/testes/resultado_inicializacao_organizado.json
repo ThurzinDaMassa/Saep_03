@@ -1,0 +1,13 @@
+{
+  "data_execucao": "2026-10-14T11:02:47.501Z",
+  "url": "http://127.0.0.1:8081",
+  "total": 5,
+  "aprovados": 5,
+  "casos": [
+    "HTML aberto diretamente explica como iniciar o sistema",
+    "HTML sem servidor não oferece um login inoperante",
+    "Servidor está ativo e exige uma nova sessão",
+    "Navegador autentica e consulta cadastros e ordens do banco",
+    "Cadastros e ordens gravados nos testes permanecem após reiniciar"
+  ]
+}

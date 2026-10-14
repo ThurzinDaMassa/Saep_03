@@ -3,8 +3,10 @@
     <option name="MAIN_CLASS_NAME" value="oficina.App" />
     <module name="torq-oficina" />
     <option name="PROGRAM_PARAMETERS" value="--init" />
-    <option name="VM_PARAMETERS" value="-Djdk.net.unixdomain.tmpdir=&quot;$PROJECT_DIR$&quot;" />
+    <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8 -Djdk.net.unixdomain.tmpdir=C:/Windows/Temp" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TorqOficina" />
-    <method v="2"><option name="Make" enabled="true" /></method>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
   </configuration>
 </component>

@@ -1,6 +1,7 @@
 build/
-target/
-.idea/
-out/
 *.log
 config.local.properties
+config.teste.properties
+target/
+dados/
+*.trace.db

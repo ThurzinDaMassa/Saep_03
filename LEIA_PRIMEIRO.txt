@@ -1,0 +1,29 @@
+﻿TORQ OFICINA - JAVA + BANCO PELO XAMPP
+
+1. Extraia o ZIP inteiro e mantenha todas as pastas juntas.
+2. Instale Java 17+ e XAMPP no computador, caso ainda não tenha.
+3. Abra XAMPP Control Panel e clique em Start na linha MySQL.
+4. Confira TorqOficina/config.properties. Padrão: 127.0.0.1, porta 3306,
+   banco torq_oficina, usuário root e senha vazia. Ajuste se necessário.
+5. Dê dois cliques em INICIAR_SISTEMA.bat.
+6. Acesse http://localhost:8080.
+
+Login: admin@torq.local
+Senha: Oficina@123
+
+O Java prepara as 11 tabelas e os dados iniciais automaticamente.
+Mantenha a janela do Java e MySQL no XAMPP em execução.
+Para encerrar, use Ctrl+C no Java antes de parar o banco.
+
+Para mostrar as tabelas ao professor, inicie também Apache e abra
+http://localhost/phpmyadmin. Se Apache usar outra porta, ajuste o endereço.
+
+Guia completo: COMO_RODAR_E_APRESENTAR_O_SISTEMA.txt
+Classes Java: TorqOficina/src/main/java/oficina/
+Guia das classes: TorqOficina/documentacao/arquitetura_java.md
+
+O ZIP não contém os dados do servidor do XAMPP. Para transferir registros
+entre PCs, exporte o banco pelo phpMyAdmin e importe em uma base nova.
+
+Alternativa com banco H2 separado: TorqOficina/iniciar_demo.bat.
+Para apresentar com XAMPP, use INICIAR_SISTEMA.bat.

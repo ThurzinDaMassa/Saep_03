@@ -1,0 +1,389 @@
+﻿======================================================================
+                  TORQ OFICINA - GRUPO 04
+       PASSO A PASSO: JAVA + BANCO PELO MYSQL DO XAMPP
+======================================================================
+
+Este é o procedimento principal do grupo para executar o sistema em outro
+computador e mostrar os registros no banco ao professor.
+
+O Java executa o sistema e atende o navegador. O módulo MySQL do XAMPP
+executa o banco de dados. O Apache permite abrir o phpMyAdmin para consultar
+as tabelas. O sistema Java funciona mesmo sem o Apache, desde que o banco
+esteja iniciado.
+
+Nas versões atuais do XAMPP, o banco incluído é MariaDB, embora o botão do
+painel continue chamado MySQL. O projeto usa JDBC e a conexão configurada
+com db.engine=mysql para esse banco. Essa diferença de nome não exige
+alterar o código ou instalar outro banco para o procedimento do XAMPP.
+Referência: https://www.apachefriends.org/faq_windows.html
+
+
+1. O QUE PRECISA ESTAR INSTALADO NO OUTRO COMPUTADOR
+----------------------------------------------------------------------
+
+  - Java 17 ou superior. Um JDK 17 ou 21 serve.
+  - XAMPP, com o módulo MySQL disponível.
+  - Um navegador, como Edge ou Chrome.
+  - O ZIP completo do Torq Oficina.
+
+O programa já está compilado. Não é necessário instalar Maven, Node ou
+Python para executar. O driver JDBC já está incluído na pasta lib.
+
+Se faltar Java ou XAMPP, obtenha os instaladores compatíveis com o Windows:
+
+  Java/JDK: https://adoptium.net/temurin/releases/
+  XAMPP: https://www.apachefriends.org/
+
+Depois de instalar, abra novamente os iniciadores do projeto.
+
+
+2. EXTRAIR O PROJETO
+----------------------------------------------------------------------
+
+PASSO 1
+Copie TorqOficina_Grupo04_Pronto_Para_Rodar.zip para o computador.
+Pode usar pendrive, Drive ou outro meio de transferência.
+
+PASSO 2
+Clique com o botão direito no ZIP e escolha "Extrair tudo".
+Espere a extração terminar. Não execute de dentro do ZIP.
+
+PASSO 3
+Abra a pasta extraída. Mantenha juntos:
+
+  INICIAR_SISTEMA.bat
+  LEIA_PRIMEIRO.txt
+  COMO_RODAR_E_APRESENTAR_O_SISTEMA.txt
+  TorqOficina/
+
+A pasta pode ficar em Downloads ou em outra pasta do computador.
+O Java fornece a interface pelo endereço http://localhost:8080; não é
+necessário mover o projeto para htdocs ou executar pelo Apache.
+
+Não envie somente o BAT, o JAR ou as telas. O pacote completo contém as
+classes, o programa compilado, a interface, os scripts e o driver JDBC.
+
+
+3. INICIAR O BANCO PELO XAMPP
+----------------------------------------------------------------------
+
+PASSO 1
+Abra o XAMPP Control Panel.
+Em uma instalação em C:\xampp, o painel é xampp-control.exe nessa pasta.
+
+PASSO 2
+Na linha MySQL, clique em "Start".
+Espere o módulo indicar que está em execução, normalmente em verde.
+
+PASSO 3
+Confira a porta do banco. O padrão costuma ser 3306.
+Se o seu XAMPP estiver configurado com outra porta, ela deve ser informada
+em db.port na configuração do projeto.
+
+PASSO 4
+Para mostrar as tabelas no phpMyAdmin, inicie também Apache pelo painel.
+Com Apache na porta padrão, abra:
+
+  http://localhost/phpmyadmin
+
+O phpMyAdmin normalmente fica no endereço do Apache, enquanto o sistema
+Java fica em http://localhost:8080. São acessos diferentes.
+
+Se Apache usar uma porta personalizada, use essa porta no endereço do
+phpMyAdmin. Exemplo para Apache em 8085:
+
+  http://localhost:8085/phpmyadmin
+
+
+4. CONFERIR A CONEXÃO DO PROJETO
+----------------------------------------------------------------------
+
+Abra TorqOficina/config.properties no Bloco de Notas.
+Para uma instalação padrão do XAMPP sem senha no root, os valores são:
+
+  db.engine=mysql
+  db.host=127.0.0.1
+  db.port=3306
+  db.name=torq_oficina
+  db.user=root
+  db.password=
+  server.port=8080
+
+db.password= vazio significa senha vazia. Não escreva a palavra "vazia".
+Se vocês definiram uma senha no banco, coloquem a senha depois do sinal =.
+Se usam outro usuário ou outra porta, ajustem esses campos.
+
+A senha do banco não é a senha de login da aplicação. Oficina@123 é a
+senha do administrador fictício do sistema, não necessariamente do root.
+
+Salve mantendo o nome config.properties, sem acrescentar .txt.
+
+Se existir config.local.properties, ele tem preferência nos iniciadores
+de MySQL. Confira essa configuração ou use uma extração nova do ZIP, que
+não inclui arquivos locais de configuração.
+
+
+5. INICIAR O SISTEMA JAVA E PREPARAR O BANCO
+----------------------------------------------------------------------
+
+PASSO 1
+Com MySQL já iniciado no XAMPP, dê dois cliques em:
+
+  INICIAR_SISTEMA.bat
+
+Esse é o iniciador principal, agora configurado para o banco do XAMPP.
+Dentro de TorqOficina, iniciar.bat e iniciar_mysql.bat usam o mesmo modo.
+
+PASSO 2
+Aguarde a preparação. O Java cria o banco torq_oficina e as 11 tabelas.
+Se não houver usuários, ele insere as contas e os dados fictícios iniciais.
+A preparação automática preserva os registros de um banco já preenchido.
+
+Não é preciso importar SQL manualmente ao usar esse iniciador.
+Não execute o script de população depois da carga automática: ambos criam
+os mesmos registros. O usuário do banco precisa ter permissão para criar
+o banco e as tabelas na primeira preparação.
+
+PASSO 3
+Espere a mensagem:
+
+  TORQ OFICINA - SISTEMA INICIADO
+
+O terminal deve informar MySQL e o nome do banco. Não deve indicar H2
+quando vocês estão apresentando o procedimento com XAMPP.
+
+PASSO 4
+O navegador deve abrir automaticamente. Se não abrir, digite:
+
+  http://localhost:8080
+
+PASSO 5
+Entre com:
+
+  E-mail: admin@torq.local
+  Senha: Oficina@123
+
+PASSO 6
+Mantenha o Java e o MySQL do XAMPP em execução durante a apresentação.
+Apache também deve continuar ativo enquanto vocês usam o phpMyAdmin.
+
+Para encerrar, pressione Ctrl+C na janela do Java. Depois, se desejar,
+clique em "Stop" no módulo MySQL do XAMPP. Na próxima execução, inicie
+novamente MySQL antes de abrir INICIAR_SISTEMA.bat.
+
+
+6. CONFERIR AS TABELAS NO PHPMYADMIN
+----------------------------------------------------------------------
+
+PASSO 1
+Com Apache e MySQL ativos, abra o phpMyAdmin.
+
+PASSO 2
+Atualize a lista de bancos e selecione torq_oficina.
+Se alterou db.name, selecione o nome configurado.
+
+PASSO 3
+Você deve encontrar estas 11 tabelas:
+
+  usuarios             clientes              veiculos
+  servicos             pecas                 ordens
+  ordem_servicos       ordem_pecas           movimentacoes
+  historico_ordens     auditoria
+
+PASSO 4
+Clique em uma tabela e abra "Visualizar" / "Browse" para ver os registros.
+Também é possível usar a aba SQL. Exemplos:
+
+  SELECT id, nome, documento, telefone FROM torq_oficina.clientes;
+  SELECT id, placa, modelo, cliente_id FROM torq_oficina.veiculos;
+  SELECT id, relato, status FROM torq_oficina.ordens;
+  SELECT id, nome, estoque FROM torq_oficina.pecas;
+  SELECT * FROM torq_oficina.movimentacoes;
+
+Após salvar uma operação no sistema, atualize a consulta ou a visualização
+da tabela. O registro salvo deve aparecer no banco.
+
+
+7. ROTEIRO DA APRESENTAÇÃO AO PROFESSOR
+----------------------------------------------------------------------
+
+1) Mostre MySQL ativo no XAMPP, o terminal do Java e o sistema no navegador.
+   Entre com o administrador.
+
+2) Em Clientes, cadastre dados fictícios. Exemplo:
+   Nome: Cliente da apresentação
+   Documento: APRESENTACAO-01
+   Telefone: (47) 99999-0000
+   E-mail: apresentacao@example.com
+   Se o documento já existir, use outro.
+
+3) No phpMyAdmin, abra clientes e atualize a visualização. Mostre o novo
+   registro. Isso comprova que o formulário gravou no banco do XAMPP.
+
+4) Cadastre um veículo ligado ao cliente. Exemplo de placa: GRP4A04.
+   Preencha marca, modelo, ano e quilometragem. Use outra placa se já existir.
+   Mostre o registro em veiculos e o vínculo pelo cliente_id.
+
+5) Abra uma ordem para esse veículo e escolha um responsável, como Mecânico.
+   Relato sugerido: "Troca de óleo e revisão preventiva".
+   O sistema impede duas ordens ativas para o mesmo veículo.
+
+6) Adicione um serviço e uma peça com saldo disponível. Nos dados iniciais:
+   Troca de óleo, quantidade 1: R$ 90,00.
+   Filtro de óleo, quantidade 1: R$ 35,00.
+   Total desses itens: R$ 125,00.
+   Se os preços ou os itens forem alterados, o total será diferente.
+
+7) Mostre o total da ordem e consulte pecas e movimentacoes no phpMyAdmin.
+   A quantidade consumida deve diminuir o saldo e gerar uma movimentação.
+
+8) Alterem a ordem seguindo o fluxo:
+   Aberta -> Em execução -> Concluída -> Entregue.
+   É necessário registrar pelo menos um serviço para concluir.
+   Confirme a entrega quando o sistema pedir.
+
+9) Mostre o histórico da ordem e a auditoria. As operações registram autor
+   e eventos. A ordem entregue permanece disponível para consulta.
+
+10) Anote a placa ou o número da ordem. Encerre o Java e inicie novamente
+    pelo mesmo iniciador. Faça login e procure os registros para comprovar
+    que continuam salvos no banco.
+
+Ensaiem esse roteiro no computador da apresentação. Confiram estoque,
+documentos e placas antes de repetir os cadastros.
+
+
+8. COMO LEVAR O BANCO JÁ PREENCHIDO PARA OUTRO COMPUTADOR
+----------------------------------------------------------------------
+
+O ZIP do projeto não contém os dados do servidor MySQL/MariaDB do XAMPP.
+Em outro computador, a preparação cria uma nova base de demonstração.
+
+Para levar os registros que vocês já cadastraram, exportem o banco:
+
+NO COMPUTADOR DE ORIGEM
+
+  1. Encerre o sistema Java para evitar alterações durante a transferência.
+  2. Mantenha Apache e MySQL ativos para usar o phpMyAdmin.
+  3. Selecione torq_oficina.
+  4. Abra a aba Exportar.
+  5. Exporte em formato SQL, incluindo estrutura e dados.
+  6. Salve o arquivo, por exemplo torq_oficina_apresentacao.sql.
+
+NO COMPUTADOR DE DESTINO
+
+  1. Instale Java e XAMPP e extraia o projeto.
+  2. Inicie Apache e MySQL no painel do XAMPP.
+  3. No phpMyAdmin, crie um banco NOVO para receber a cópia, por exemplo
+     torq_apresentacao. Não importe sobre uma base com dados existentes.
+  4. Selecione o banco novo, abra Importar e escolha o SQL exportado.
+  5. Antes de importar, confira se o arquivo contém CREATE DATABASE ou USE
+     apontando para outro nome. Se contiver, ajuste essas instruções ao
+     banco de destino para que a importação use a base escolhida.
+  6. Em config.properties, defina db.name=torq_apresentacao e confira as
+     credenciais do banco desse computador.
+  7. Inicie INICIAR_SISTEMA.bat e consulte os registros importados.
+
+Ao importar uma cópia com usuários, a preparação não repete a carga de
+demonstração. As contas e senhas da aplicação são as existentes na cópia.
+Não é preciso usar 03_dados_demonstracao.sql depois de importar o banco.
+
+No modo XAMPP, o banco fica no servidor do XAMPP; não é o arquivo .mv.db
+da pasta dados do projeto. Use exportação e importação SQL para transferi-lo.
+
+
+9. PROBLEMAS COMUNS
+----------------------------------------------------------------------
+
+MySQL não inicia no XAMPP
+  Confira o log do módulo no painel. Uma possibilidade é a porta estar
+  ocupada por outro servidor de banco. Identifique qual serviço está usando
+  a porta antes de mudar a configuração. Use em db.port a porta efetiva
+  do servidor escolhido.
+
+Access denied / acesso negado ao banco
+  Confira db.user, db.password e permissões. A senha do banco pode ser
+  diferente da senha Oficina@123 usada no login da aplicação.
+
+Communications link failure / conexão recusada
+  Inicie MySQL no XAMPP e confira db.host e db.port.
+
+Java não encontrado
+  Instale Java/JDK 17+ e abra novamente o iniciador. diagnosticar.bat mostra
+  qual Java e qual configuração o projeto está usando.
+
+Porta da aplicação em uso
+  Feche a outra instância do Java. Se Apache, Tomcat ou outro programa usa
+  8080, altere server.port em config.properties para 8082 e abra o sistema
+  em http://localhost:8082. db.port continua sendo a porta do banco.
+
+phpMyAdmin não abre, mas o sistema Java funciona
+  Confira se Apache está ativo e use sua porta no endereço do phpMyAdmin.
+  A aplicação Java não depende de Apache para atender em sua própria porta.
+
+O banco não aparece no phpMyAdmin
+  Aguarde a preparação pelo Java, atualize a lista e confira db.name.
+  Confira também se o phpMyAdmin está conectado ao mesmo servidor/porta.
+
+Driver ou interface ausente
+  Extraia o ZIP inteiro e mantenha lib, web, banco e dist no projeto.
+
+Erro ao salvar documento ou placa
+  Confira os formatos e use valores que ainda não estejam cadastrados.
+
+Estoque insuficiente
+  Use uma quantidade disponível ou registre uma reposição antes de consumir.
+
+
+10. CLASSES, CONTAS E MATERIAL PARA ESTUDAR
+----------------------------------------------------------------------
+
+Contas fictícias iniciais:
+  Administrador: admin@torq.local / Oficina@123
+  Atendente: atendimento@torq.local / Atende@123
+  Mecânico: mecanico@torq.local / Mecanico@123
+
+Classes Java: TorqOficina/src/main/java/oficina/
+Classe principal: oficina.App
+Guia das classes: TorqOficina/documentacao/arquitetura_java.md
+Programa compilado: TorqOficina/dist/TorqOficina.jar
+Estrutura SQL: TorqOficina/banco/02_estrutura.sql
+Documentação completa: TorqOficina/README.md
+Relatório de testes: TorqOficina/documentacao/validacao_organizacao.md
+
+O projeto tem 29 arquivos Java separados por responsabilidades.
+O administrador pode executar as operações do roteiro; os outros perfis
+têm permissões específicas.
+
+Existe uma alternativa com banco H2 em TorqOficina/iniciar_demo.bat.
+Ela usa outra base. Para a apresentação com XAMPP, use o iniciador principal.
+
+Os resultados da revisão organizada incluem testes em H2. Os relatórios
+anteriores registram testes em MariaDB 10.4.32 do XAMPP. Confirmem o fluxo
+na instalação de XAMPP que será usada na apresentação.
+
+
+11. CHECKLIST FINAL
+----------------------------------------------------------------------
+
+[ ] Java 17 ou superior está instalado.
+[ ] XAMPP está instalado e MySQL inicia corretamente.
+[ ] O ZIP completo foi extraído.
+[ ] config.properties corresponde ao banco desse computador.
+[ ] INICIAR_SISTEMA.bat informa MySQL e o banco esperado.
+[ ] O administrador consegue entrar no sistema.
+[ ] Apache está ativo para mostrar o phpMyAdmin.
+[ ] As 11 tabelas aparecem no banco correto.
+[ ] O grupo ensaiou cadastro, ordem, consumo de peça e entrega.
+[ ] O registro salvo pela interface aparece no phpMyAdmin.
+[ ] Os dados continuam disponíveis depois de reiniciar o Java.
+[ ] Se necessário, o banco da apresentação foi exportado e importado.
+[ ] Cada integrante sabe explicar o fluxo e localizar as classes Java.
+
+RESUMO:
+  EXTRAIR ZIP -> START MYSQL NO XAMPP -> CONFERIR CONFIGURAÇÃO
+  -> INICIAR_SISTEMA.bat -> LOGIN -> DEMONSTRAR -> CONFERIR PHPMYADMIN
+
+======================================================================
+                         FIM DO GUIA
+======================================================================

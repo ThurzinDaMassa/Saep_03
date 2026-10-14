@@ -1,5 +1,18 @@
-MySQL Connector/J 8.4.0 - driver JDBC oficial da Oracle/MySQL.
-Arquivo incluído a partir do cache Maven disponível nesta máquina.
+DRIVERS JDBC INCLUÍDOS
+
+MySQL Connector/J 8.4.0 — driver oficial Oracle/MySQL.
 Coordenadas Maven: com.mysql:mysql-connector-j:8.4.0
-Consulte LICENSE e INFO_BIN incluídos no próprio JAR para licença e autoria.
-O servidor MySQL e o JDK não são incluídos no pacote.
+Consulte LICENSE e INFO_BIN no próprio JAR para licença e autoria.
+
+H2 Database Engine 2.5.252 — banco relacional local usado na demonstração.
+Coordenadas Maven: com.h2database:h2:2.5.252
+Origem: https://repo.maven.apache.org/maven2/com/h2database/h2/2.5.252/h2-2.5.252.jar
+O checksum SHA-1 foi comparado com o publicado pelo Maven Central.
+SHA-256 do arquivo incluído:
+90b11dc413da82070ef15fc943282c1408e6ffd34fa68998335fea8603b5ff20
+Licenças H2: MPL 2.0 ou EPL 1.0, conforme documentação oficial.
+https://h2database.com/html/license.html
+
+Os drivers já vêm no pacote. Nenhum download ocorre ao iniciar o sistema.
+O Java e o servidor MySQL não são incluídos. O MySQL é necessário somente
+quando o grupo optar pelo modo MySQL.

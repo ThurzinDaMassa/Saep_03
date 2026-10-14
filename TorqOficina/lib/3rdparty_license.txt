@@ -1,0 +1,14 @@
+Third-party libraries
+
+H2 Database Engine 2.5.252
+This package redistributes the unmodified H2 binary. H2 is available under
+the Mozilla Public License 2.0 or Eclipse Public License 1.0.
+License terms: https://h2database.com/html/license.html
+Source code: https://github.com/h2database/h2database/tree/version-2.5.252
+H2 is provided as is, without warranties; its license limits contributors'
+liability for damages arising from use or distribution.
+
+MySQL Connector/J 8.4.0
+The unmodified driver supplied with the original project is retained.
+Its original LICENSE and INFO_BIN notices are included in the JAR.
+Source and licensing: https://dev.mysql.com/doc/connector-j/en/

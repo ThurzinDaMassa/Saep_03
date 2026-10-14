@@ -21,3 +21,8 @@ tmp/
 # Versões anteriores da entrega
 Entrega_Grupo04_Oficina_Mecanica.zip
 TorqOficina/entrega/Apresentacao_Grupo04_Torq.pptx
+
+# Bancos locais e configuração de testes da versão organizada
+**/dados/
+**/*.mv.db
+**/*.trace.db
